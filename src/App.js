@@ -1,11 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
+//import { RootSiblingParent } from 'react-native-root-siblings';
+import { StyleSheet, View } from "react-native";
+import MyHeader from "./components/MyHeader";
 import "./styles.css";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+export default class App extends Component {
+  constructor(state) {
+    super(state);
+    this.state = {
+      theme: ""
+    };
+  }
+  render() {
+    return (
+      <View style={Styles.container}>
+        <MyHeader />
+      </View>
+    );
+  }
 }
+
+var Styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    flex: 1,
+    backgroundColor: "#42b5e3",
+    padding: 10
+  }
+});
